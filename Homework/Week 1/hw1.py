@@ -4,21 +4,21 @@
 import math
 
 def string3(str):
-    '''
+    """
     Given a string, return a new string made of 3 copies of the last 2 chars of the original string.
     The string length will be at least 2.
-    '''
-    endChars = str[len(str) - 2: len(str)]
+    """
+    end_chars = str[len(str) - 2: len(str)]
     output = ""
     for x in range(3):
-        output += endChars
+        output += end_chars
     return output
 
 def has123(nums):
-    '''
+    """
     Given an list of ints, return True if the sequence of numbers
     1, 2, 3 appears in the list somewhere.
-    '''
+    """
     for i in range(len(nums) - 1):
         if nums[i] == 1:
             if nums[i + 1] == 2:
@@ -28,10 +28,10 @@ def has123(nums):
 
  #string 2 count_code
 def hascode(str):
-    '''
+    """
     Return the number of times that the string "code" appears anywhere in the given string,
     except we'll accept any letter for the 'd', so "cope" and "cooe" count.
-    '''
+    """
     count = 0
     for i in range(len(str) - 3):
         if str[i] == 'c':
@@ -41,36 +41,36 @@ def hascode(str):
     return count
 
 def samecatdog(str):
-    '''
+    """
     Return True if the string "cat" and "dog" appear the same number of times in the given string.
    *** This can be simplfied using a Python API function ***
-    '''
-    countCat = 0
+    """
+    count_cat = 0
     for i in range(len(str) - 2):
         if str[i] == 'c':
             if str[i + 1] == 'a':
                 if str[i + 2] == 't':
-                    countCat += 1
-    countDog = 0
+                    count_cat += 1
+    count_dog = 0
     for i in range(len(str) - 2):
         if str[i] == 'd':
             if str[i + 1] == 'o':
                 if str[i + 2] == 'g':
-                    countDog += 1
-    return countCat == countDog
+                    count_dog += 1
+    return count_cat == count_dog
 
 
 def centered_avg(nums):
-    '''
+    """
     Return the "centered" average of a list of ints, which we'll say is the mean average of the
     values, except ignoring the largest and smallest values in the list. If there are
     multiple copies of the smallest value, ignore just one copy, and likewise for the largest value.
     Use floor division to produce the final average. You may assume that the list is length 3 or more.
-    '''
+    """
     avg = 0
     for x in nums[1:len(nums) - 1]:
         avg += x
-    return math.floor(avg / (len(nums) - 2))
+    return avg // (len(nums) - 2)
 
 #Test functions
 assert string3("Hello") == 'lololo', 'string3(Hello) expected lololo'
