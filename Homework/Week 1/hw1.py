@@ -19,7 +19,7 @@ def has123(nums):
     Given an list of ints, return True if the sequence of numbers
     1, 2, 3 appears in the list somewhere.
     """
-    for i in range(len(nums) - 1):
+    for i in range(len(nums) - 2):
         if nums[i] == 1:
             if nums[i + 1] == 2:
                 if nums[i + 2] == 3:
